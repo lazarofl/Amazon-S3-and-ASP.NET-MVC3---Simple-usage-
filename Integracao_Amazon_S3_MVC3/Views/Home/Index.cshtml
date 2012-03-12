@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Amazon S3";
+    Layout = "_Layout";
+}
+@using (Html.BeginForm("CarregarArquivo", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Enviar arquivo ao Amazon S3</legend>
+        <input type="file" name="file" />
+        <input type="submit" value="enviar" />
+    </fieldset>
+}
+
+@if (ViewData["mensagem"] != null)
+{
+    Html.Raw(ViewData["mensagem"].ToString());
+}
